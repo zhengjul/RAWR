@@ -39,10 +39,17 @@ RAWR is a Python program intended as a non-parametric resampling method to rival
 Installation
 ---------------
 Software Install
- * RAWR has a GUI software tested to work on Linux and Mac. Before running RAWR, please make sure you have the following dependencies:
+ * RAWR has a GUI interface tested to work on Linux and Mac. Before running RAWR, please make sure you have set `python` to link to Python3. We have last checked on Python 3.8 that the following python dependencies' versions are compatible:
 ```
- * Python 3.6+
-
+ pip install ete3==3.1.2
+ pip install PyQt5==5.11.3
+ pip install 'numpy>=1.14.6'
+ pip install 'scipy>=1.1.0'
+ pip install sklearn
+ pip install 'Bio>=1.1.5'
+ pip install 'flask>=2.0.2'
+ pip install 'pytz>=2021.3'
+ pip install 'python-dateutil>=2.7.3'
 ```
  * To run RAWR, open up a command terminal in the RAWR-software directory and type in `python main.py`. 
 
