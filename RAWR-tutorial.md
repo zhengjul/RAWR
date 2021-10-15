@@ -1,9 +1,9 @@
 RAWR is a Python program intended as a non-parametric resampling method to rival the classic bootstrap resampling. RAWR and SERES are sequential resampling algorithms for support estimation of multiple sequence alignments and phylogenetic tree alignments. RAWR and SERES conceptually work by random walking along biological molecular sequences and retaining the sequence dependence during the resampling process. We present this tutorial for people who prefer to use a GUI application or a website interface. The algorithms are freely available under the GNU General Public License.
 
 * [Installation](#installation)
-  * [**Software Install**](#software-install)
-  * [**Website Install**](#website-install)
-  * [**API Install**](#API-install)
+  * [Software Install](#software-install)
+  * [Website Install](#website-install)
+  * [API Install](#API-install)
 
 
   * [Running RAWR](#running-rawr)
@@ -38,8 +38,10 @@ RAWR is a Python program intended as a non-parametric resampling method to rival
 
 Installation
 ---------------
-**Software Install**
- * RAWR has a GUI interface tested to work on Linux and Mac. Before running RAWR, please make sure you have set `python` to link to Python3. We have last checked on Python 3.8 that the following python dependencies' versions are compatible:
+
+### Software Install
+
+RAWR has a GUI interface tested to work on Linux and Mac. Before running RAWR, please make sure you have set `python` to link to Python3. We have last checked on Python 3.8 that the following python dependencies' versions are compatible:
 ```
  pip install ete3==3.1.2
  pip install PyQt5==5.11.3
@@ -51,11 +53,12 @@ Installation
  pip install 'pytz>=2021.3'
  pip install 'python-dateutil>=2.7.3'
 ```
- * To run RAWR, open up a command terminal in the RAWR-software directory and type in `python main.py`. 
+To run RAWR GUI software, launch open a command `terminal` in the RAWR-software directory and type in `python main.py`. 
 
-**Website Install**
+### Website Install
 
-**API Install**
+### API Install
+
 <!-- - Web server: The users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
 - Mac OS GUI client: To install Mac OS GUI client locally, you need to download the installation package from [TODO].
 Then double click the installation package and install the software on your device.  -->
