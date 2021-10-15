@@ -1,8 +1,9 @@
 RAWR is a Python program intended as a non-parametric resampling method to rival the classic bootstrap resampling. RAWR and SERES are sequential resampling algorithms for support estimation of multiple sequence alignments and phylogenetic tree alignments. RAWR and SERES conceptually work by random walking along biological molecular sequences and retaining the sequence dependence during the resampling process. We present this tutorial for people who prefer to use a GUI application or a website interface. The algorithms are freely available under the GNU General Public License.
 
-* [GUI Software Installation](#software-installation)
-* [Web Installation](#web-installation)
-* [API Installation](#API-installation)
+* [Installation](#installation)
+ * [Software Install](#software-installation)
+ * [Website Install](#website-installation)
+ * [API Install](#API-installation)
   * [Running RAWR](#running-rawr)
     * [Sample sequences](#sample-sequences)
       * [**Basic usage**](#basic-usage)
@@ -33,7 +34,7 @@ RAWR is a Python program intended as a non-parametric resampling method to rival
     * [MSA support estimation output](#msa-support-estimation-output)
     * [Tree support estimation output](#tree-support-estimation-output)
 
-GUI Software Installation
+Installation
 ---------------
 
 <!-- - Web server: The users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
