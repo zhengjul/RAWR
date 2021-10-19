@@ -50,7 +50,7 @@ First, please make sure you have set `python` to link to Python3 and make sure y
 ```
 Second, set up your server e-mail. Its purpose is to notify the user when and where the results can be found, in case they time out or exit from the homepage, they will still get the result safely delivered via email when it's ready. We have included below instructions to set up any Gmail account as a server sender. Setting up Flask to use an existing emailing service is the easiest way to use the asynchronous emailing option, but feel free to adapt the code to your needs.
 ```
-Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps
+Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps (https://myaccount.google.com/lesssecureapps)
 
 Step 2: Edit the app.py in the following app.config.update() section. Please choose from the two options below:
         1) If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
