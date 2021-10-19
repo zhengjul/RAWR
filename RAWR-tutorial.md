@@ -49,26 +49,26 @@ First, please make sure you have set `python` to link to Python3 and make sure y
  pip install 'python-dateutil>=2.7.3'
 ```
 Second, set up your server e-mail. Its purpose is to notify the user when and where the results can be found, in case they time out or exit from the homepage, they will still get the result safely delivered via email when it's ready. We have included below instructions to set up any Gmail account as a server sender. Setting up Flask to use an existing emailing service is the easiest way to use the asynchronous emailing option, but feel free to adapt the code to your needs.
-```
-Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps (https://myaccount.google.com/lesssecureapps)
+
+Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps 
 
 Step 2: Edit the app.py in the following app.config.update() section. Please choose from the two options below:
         1) If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
         2) If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465.
-        
-        app.config.update(
-           MAIL_SERVER='smtp.gmail.com',
-           MAIL_PORT=465,          
-           MAIL_USE_SSL=True,      
-           MAIL_USERNAME='xxx@gmail.com',
-           MAIL_PASSWORD='xxx'
-       )
-
+```
+ app.config.update(
+    MAIL_SERVER='smtp.gmail.com',
+    MAIL_PORT=465,          
+    MAIL_USE_SSL=True,      
+    MAIL_USERNAME='xxx@gmail.com',
+    MAIL_PASSWORD='xxx'
+)
+```
 Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 
         1) If you have NOT enabled 2-step verification, enter your gmail login password
         2) If you have enabled 2-step verification, generate and use an app password
 
-```
+
 To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose is `http://10.0.2.15:5000/`, and you can visit this locally hosted page with any browser. You can double check the link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
 
 ---------------
