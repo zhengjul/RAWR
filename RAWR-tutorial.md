@@ -3,37 +3,20 @@ RAWR is a Python program intended as a non-parametric resampling method to rival
 * [Installation](#installation)
   * [Software Install](#software-install)
   * [Website Install](#website-install)
-
-
-  * [Running RAWR](#running-rawr)
-    * [Sample sequences](#sample-sequences)
-      * [**Basic usage**](#basic-usage)
-      * [**Sample more sequences**](#sample-more-sequences)
-      * [**Different reverse rate**](#different-reverse-rate)
-      * [**SERES resampler**](#seres-resampler)
-    * [Estimate support](#estimate-support)
-      * [**MSA support estimation**](#msa-support-estimation)
-      * [**Tree support estimation**](#tree-support-estimation)
-    * [Running on large dataset](#running-on-large-dataset)
-  * [Output](#output)
-    * [sample sequence output](#sample-sequence-output)
-    * [MSA support estimation output](#msa-support-estimation-output)
-    * [Tree support estimation output](#tree-support-estimation-output)
-
-  * [Running RAWR](#running-rawr)
-    * [Sample sequences](#sample-sequences)
-      * [**Basic usage**](#basic-usage)
-      * [**Sample more sequences**](#sample-more-sequences)
-      * [**Different reverse rate**](#different-reverse-rate)
-      * [**SERES resampler**](#seres-resampler)
-    * [Estimate support](#estimate-support)
-      * [**MSA support estimation**](#msa-support-estimation)
-      * [**Tree support estimation**](#tree-support-estimation)
-    * [Running on large dataset](#running-on-large-dataset)
-  * [Output](#output)
-    * [sample sequence output](#sample-sequence-output)
-    * [MSA support estimation output](#msa-support-estimation-output)
-    * [Tree support estimation output](#tree-support-estimation-output)
+* [Before Running RAWR](#before-running-rawr)
+  * [Sample sequences](#sample-sequences)
+    * [**Basic usage**](#basic-usage)
+    * [**Sample more sequences**](#sample-more-sequences)
+    * [**Different reverse rate**](#different-reverse-rate)
+    * [**SERES resampler**](#seres-resampler)
+  * [Estimate support](#estimate-support)
+    * [**MSA support estimation**](#msa-support-estimation)
+    * [**Tree support estimation**](#tree-support-estimation)
+  * [Running on large dataset](#running-on-large-dataset)
+* [Output](#output)
+  * [sample sequence output](#sample-sequence-output)
+  * [MSA support estimation output](#msa-support-estimation-output)
+  * [Tree support estimation output](#tree-support-estimation-output)
 
 Installation
 ---------------
@@ -76,22 +59,28 @@ Second, set up your server e-mail. Its purpose is to notify the user when and wh
 ```
 Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps
 
-Step 2: Edit the app.py in the following section by first choosing either SSL = True or TSL = True and setting up the respective mailing ports.
+Step 2: Edit the app.py in the following app.config.update() section. Please choose from the two options below:
+        1) If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
+        2) If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465.
+        
         app.config.update(
            MAIL_SERVER='smtp.gmail.com',
-           MAIL_PORT=465,           # If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
-           MAIL_USE_SSL=True,       # If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465
+           MAIL_PORT=465,          
+           MAIL_USE_SSL=True,      
            MAIL_USERNAME='xxx@gmail.com',
            MAIL_PASSWORD='xxx'
        )
 
-Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 1) If you have NOT enabled 2-step verification, MAIL_PASSWORD = gmail login password; or 2) If you have enabled 2-step verification, you need to generate and use an app password with gmail and enter that into MAIL_PASSWORD.
+Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 
+        1) If you have NOT enabled 2-step verification, enter your gmail login password
+        2) If you have enabled 2-step verification, generate and use an app password
 
 ```
 To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose is `http://10.0.2.15:5000/`, and you can visit this locally hosted page with any browser. You can double check the link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
 
-
-### **Sample sequences**
+---------------
+### Before Running RAWR
+---------------
 First download this [alignment file](exampleData/alignment.fasta) to your device.
  <!-- and [phylogenetic tree file](exampleData/infer.tree).  -->
 
