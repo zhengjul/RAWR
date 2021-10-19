@@ -3,7 +3,6 @@ RAWR is a Python program intended as a non-parametric resampling method to rival
 * [Installation](#installation)
   * [Software Install](#software-install)
   * [Website Install](#website-install)
-  * [API Install](#API-install)
 
 
   * [Running RAWR](#running-rawr)
@@ -54,29 +53,44 @@ RAWR has a GUI interface tested to work on Linux and Mac. Before running RAWR, p
  pip install 'python-dateutil>=2.7.3'
 ```
 To run RAWR GUI software, launch open a command `terminal` in the RAWR-software directory and type in `python main.py`. 
+Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML version 8.2.12. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their folders in `src`.
+  - MAFFT: https://mafft.cbrc.jp/alignment/software/.
+  - RAxML: https://github.com/stamatak/standard-RAxML.
 
 ### Website Install
 
-### API Install
+We provide the codebase to set up a RAWR web server to run on your local host. The users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
+First, please make sure you have set `python` to link to Python3 and make sure your python version is dependencies' versions are compatible:
+```
+ pip install ete3==3.1.2
+ pip install PyQt5==5.11.3
+ pip install 'numpy>=1.14.6'
+ pip install 'scipy>=1.1.0'
+ pip install sklearn
+ pip install 'Bio>=1.1.5'
+ pip install 'flask>=2.0.2'
+ pip install 'pytz>=2021.3'
+ pip install 'python-dateutil>=2.7.3'
+```
+Second, set up your server e-mail. Its purpose is to notify the user when and where the results can be found, in case they time out or exit from the homepage, they will still get the result safely delivered via email when it's ready. We have included below instructions to set up any Gmail account as a server sender. Setting up Flask to use an existing emailing service is the easiest way to use the asynchronous emailing option, but feel free to adapt the code to your needs.
+```
+Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps
 
-<!-- - Web server: The users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
-- Mac OS GUI client: To install Mac OS GUI client locally, you need to download the installation package from [TODO].
-Then double click the installation package and install the software on your device.  -->
-Use ```pip install RAWR``` to install the python module. Python 3.6 or later version is recommended. Other required dependencies and version requirement shows as following.  
-  - MAFFT v7 or later version. Download here https://mafft.cbrc.jp/alignment/software/.
-  - RAxML version 7.2.8 or later version. Download here https://github.com/stamatak/standard-RAxML.
+Step 2: Edit the app.py in the following section by first choosing either SSL = True or TSL = True and setting up the respective mailing ports.
+        app.config.update(
+           MAIL_SERVER='smtp.gmail.com',
+           MAIL_PORT=465,           # If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
+           MAIL_USE_SSL=True,       # If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465
+           MAIL_USERNAME='xxx@gmail.com',
+           MAIL_PASSWORD='xxx'
+       )
 
-## **Running RAWR**
-After install the RAWR module, you can sample sequences and calculate MSA support or phylogenetic support by Python script. 
+Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 1) If you have NOT enabled 2-step verification, MAIL_PASSWORD = gmail login password; or 2) If you have enabled 2-step verification, you need to generate and use an app password with gmail and enter that into MAIL_PASSWORD.
 
-RAWR also have web server and Mac OS GUI client.
-Access to web server by this link [TODO: web server link].
-The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
-You can download and install the Mac OS GUI here [TODO: software installation package].
+```
+To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose is `http://10.0.2.15:5000/`, and you can visit this locally hosted page with any browser. You can double check the link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
 
-<!-- ### Web server
-Access to the web server by [TODO: web server address]. Upload the input alignment file, select the parameters and click 
-### MAC OS GUI software -->
+
 ### **Sample sequences**
 First download this [alignment file](exampleData/alignment.fasta) to your device.
  <!-- and [phylogenetic tree file](exampleData/infer.tree).  -->
