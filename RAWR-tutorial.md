@@ -4,7 +4,7 @@ RESampling (SERES), for performing support estimation for multiple sequence alig
 * [Installation](#installation)
   * [Software Install](#software-install)
   * [Website Install](#website-install)
-* [Inputs Into RAWR](#inputs-into-rawr)
+* [Input](#input)
 * [Output](#output)
   * [sample sequence output](#sample-sequence-output)
   * [MSA support estimation output](#msa-support-estimation-output)
@@ -72,39 +72,54 @@ Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as
 To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose is `http://10.0.2.15:5000/`, and you can visit this locally hosted page with any browser. You can double check the link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
 
 ---------------
-### Inputs Into RAWR
+Input
 
 If you are running RAWR for MSA estimation, please prepare a multi-species alignment file in FASTA format. 
 If you are running RAWR for phylogeny alignment estimation, please prepare a multi-species alignment file and a phylogeny in Newick tree format.
 
 In this tutorial, we will not go over preparing the inputs. Instead, we provide two small datasets to try out RAWR. These two datasets have been prepared from sequence files and aligned with MAFFT. Then, we used the alignment file as input into RAxML and reconstructed a phylogeny under the General Time Reversal (GTR) model. 
 
-1) Launch a `terminal` in your RAWR directory. For the software RAWR, enter `python main.py`. For the web server RAWR, enter comand `python app.py` and open a browser to `http://10.0.2.15:5000/` or whichever localhost your server is using (if you need help, see installation for web server for more details). 
+1) Launch a command `terminal` in your RAWR directory. For the software RAWR, enter `python main.py`. For the web server RAWR, enter comand `python app.py` and open a browser to `http://10.0.2.15:5000/` or whichever localhost your server is using (if you need help, see installation for web server for more details). 
 
 2) Find the example datasets in your RAWR directory under the `examples` folder. Here, you should see `dataset1-5taxa` and `dataset2-10taxa`. We recommend starting with the smaller dataset,`dataset1-5taxa`, and returning to the larger dataset, `dataset2-10taxa`, later.
 
 3) Select either `RAWR` or `SERES` as resampling algorithm.
 
-4) Select either multiple sequence alignment (MSA) estimation or phylogenetic tree estimation.
+4) Select either `multiple sequence alignment (MSA)` estimation or `phylogenetic tree` estimation.
 
 5) Optionally, you can edit the default parameter values.
 ```
-Step size...
+By default:
+Sample Number: 10
+Reverse Rate: 0.1
+Anchor Number: 20 (SERES only)
+Anchor Length: 5 (SERES only)
 ```
 
 6) Select a file input for the FASTA alignment file. In our example datasets, choose `alignment.fasta`
 
 7) Copy-paste the contents of `infer.tree` into the phylogeny tree textbox.
 
-8) Optionally, if you are using the website version of RAWR, you can enter a user email address to email the results to.
+8) If you are using the website version of RAWR, you can optionally enter a user email address to send the results.
 
-9) Click `Submit` and let the program run to completion. 
+9) Click `OK` or `Submit` and let the program run to completion. 
 
 
 ---------------
-### Output
+Output
+
+The Sequence sampler will create a tar compressed directory called `samples`. The sampled sequences and indices can be found here.
+
+```
+*.seq.fasta: the unaligned sampled sequence in FASTA format.
+
+*.index: this file contains a series of column indices of the input alignment. The column indices represent sampled columns of input alignment in order.
+```
 
 ### MSA support estimation output
+The MSA support estimator will calculate the support value for input alignment and save the support value to `MSA.support.csv`. 
+
+`MSA.support.csv` contains four columns. The first column locates the position of a residue pair. The second column and third column are the row index of two residues in this residue pair. Only residue pairs with no gaps are contained in this result. The last column is the support value, which ranges from 0 to 1.
 
 ### Tree support estimation output
-
+The tree support estimator will generate annotated tree in Newick format, which is saved to `tree.support.txt`. It will also generate a figure called `tree.support.png` to visualize the tree structure and support values. 
