@@ -73,7 +73,7 @@ To run RAWR web server, open a command `terminal` in the RAWR-web directory and 
 
 ---------------
 Input
-
+---------------
 If you are running RAWR for MSA estimation, please prepare a multi-species alignment file in FASTA format. 
 If you are running RAWR for phylogeny alignment estimation, please prepare a multi-species alignment file and a phylogeny in Newick tree format.
 
@@ -107,7 +107,7 @@ Anchor Length: 5 (SERES only)
 
 ---------------
 Output
-
+---------------
 The Sequence sampler will create a tar compressed directory called `samples`. The sampled sequences and indices can be found here.
 
 ```
