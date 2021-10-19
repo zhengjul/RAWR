@@ -108,6 +108,7 @@ Anchor Length: 5 (SERES only)
 ---------------
 Output
 ---------------
+
 The Sequence sampler will create a tar compressed directory called `samples`. The sampled sequences and indices can be found here.
 
 ```
@@ -117,9 +118,20 @@ The Sequence sampler will create a tar compressed directory called `samples`. Th
 ```
 
 ### MSA support estimation output
+
 The MSA support estimator will calculate the support value for input alignment and save the support value to `MSA.support.csv`. 
 
 `MSA.support.csv` contains four columns. The first column locates the position of a residue pair. The second column and third column are the row index of two residues in this residue pair. Only residue pairs with no gaps are contained in this result. The last column is the support value, which ranges from 0 to 1.
 
 ### Tree support estimation output
+
 The tree support estimator will generate annotated tree in Newick format, which is saved to `tree.support.txt`. It will also generate a figure called `tree.support.png` to visualize the tree structure and support values. 
+
+---------------
+Publications
+---------------
+Wang, W., Hejasebazzi, A., Zheng, J., & Liu, K. J. (2021). Build a better bootstrap and the RAWR shall beat a random path to your door: phylogenetic support estimation revisited. Bioinformatics, 37(Supplement_1), i111-i119.
+
+Wang, W., Smith, J., Hejase, H. A., & Liu, K. J. (2020). Non-parametric and semi-parametric support estimation using SEquential RESampling random walks on biomolecular sequences. Algorithms for Molecular Biology, 15(1), 1-15.
+
+Wang, W., Wuyun, Q., & Liu, K. J. (2019, November). An application of random walk resampling to phylogenetic HMM inference and learning. In 2019 IEEE International Conference on Bioinformatics and Biomedicine (BIBM) (pp. 44-51). IEEE.
