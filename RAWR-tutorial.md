@@ -5,8 +5,6 @@ RESampling (SERES), for performing support estimation for multiple sequence alig
   * [Software Install](#software-install)
   * [Website Install](#website-install)
 * [Inputs Into RAWR](#inputs-into-rawr)
-  * [Run Software RAWR](#run-software-rawr)
-  * [Run Website RAWR](#run-website-rawr)
 * [Output](#output)
   * [sample sequence output](#sample-sequence-output)
   * [MSA support estimation output](#msa-support-estimation-output)
@@ -75,12 +73,38 @@ To run RAWR web server, open a command `terminal` in the RAWR-web directory and 
 
 ---------------
 ### Inputs Into RAWR
----------------
 
 If you are running RAWR for MSA estimation, please prepare a multi-species alignment file in FASTA format. 
-If you are running RAWR for phylogeny alignemnt estimation, please prepare a multi-species alignment file and a phylogeny in Newick tree format.
+If you are running RAWR for phylogeny alignment estimation, please prepare a multi-species alignment file and a phylogeny in Newick tree format.
 
-In this tutorial, we will not go over preparing the inputs because it is a large topic. For simplicity's sake, we provide two small datasets to try out RAWR. These two datasets have been prepared from sequence files and we aligned the sequences with MAFFT to produce an alignment file. Then, we used the alignment file as input into RAxML and reconstructed a phylogeny under the General Time Reversal (GTR) model. 
+In this tutorial, we will not go over preparing the inputs. Instead, we provide two small datasets to try out RAWR. These two datasets have been prepared from sequence files and aligned with MAFFT. Then, we used the alignment file as input into RAxML and reconstructed a phylogeny under the General Time Reversal (GTR) model. 
 
-First, please open your RAWR directory and enter the `examples` folder. 
+1) Launch a `terminal` in your RAWR directory. For the software RAWR, enter `python main.py`. For the web server RAWR, enter comand `python app.py` and open a browser to `http://10.0.2.15:5000/` or whichever localhost your server is using (if you need help, see installation for web server for more details). 
+
+2) Find the example datasets in your RAWR directory under the `examples` folder. Here, you should see `dataset1-5taxa` and `dataset2-10taxa`. We recommend starting with the smaller dataset,`dataset1-5taxa`, and returning to the larger dataset, `dataset2-10taxa`, later.
+
+3) Select either `RAWR` or `SERES` as resampling algorithm.
+
+4) Select either multiple sequence alignment (MSA) estimation or phylogenetic tree estimation.
+
+5) Optionally, you can edit the default parameter values.
+```
+Step size...
+```
+
+6) Select a file input for the FASTA alignment file. In our example datasets, choose `alignment.fasta`
+
+7) Copy-paste the contents of `infer.tree` into the phylogeny tree textbox.
+
+8) Optionally, if you are using the website version of RAWR, you can enter a user email address to email the results to.
+
+9) Click `Submit` and let the program run to completion. 
+
+
+---------------
+### Output
+
+### MSA support estimation output
+
+### Tree support estimation output
 
