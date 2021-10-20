@@ -102,7 +102,7 @@ Anchor Length: 5 (SERES only. Represents the length of the anchors.)
 
 8) If you are using the website version of RAWR, you can optionally enter a user email address to send the results.
 
-9) Click `OK` or `Submit` and let the program run to completion. 
+9) Click `OK` or `Submit` and let the program run to completion. Please note that if you are using the software GUI version of RAWR, it is best to provide an empty results folder to avoid any problems with RAxML refusing to run due to previous runs' files present or improper software termination.
 
 
 ---------------
