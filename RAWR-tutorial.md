@@ -90,8 +90,8 @@ In this tutorial, we will not go over preparing the inputs. Instead, we provide 
 5) Optionally, you can edit the default parameter values.
 ```
 By default:
-Sample Number: 10
-Reverse Rate: 0.1
+Sample Number: 10 (minimum 2)
+Reverse Rate: 0.1 (+ values)
 Anchor Number: 20 (SERES only)
 Anchor Length: 5 (SERES only)
 ```
