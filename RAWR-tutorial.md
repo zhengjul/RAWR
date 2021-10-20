@@ -61,13 +61,15 @@ Step 2: Edit the app.py in the following app.config.update() section.
     MAIL_USERNAME='xxx@gmail.com',
     MAIL_PASSWORD='xxx'
 )
+```
 When editing the MAIL_PORT, please choose from the two options below:
 1) If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
 2) If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465.
-```
+
+
 Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 
-        1) If you have NOT enabled 2-step verification, enter your gmail login password
-        2) If you have enabled 2-step verification, generate and use an app password
+1) If you have NOT enabled 2-step verification, enter your gmail login password
+2) If you have enabled 2-step verification, generate and use an app password
 
 
 To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose is `http://10.0.2.15:5000/`, and you can visit this locally hosted page with any browser. You can double check the link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
