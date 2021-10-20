@@ -90,10 +90,10 @@ In this tutorial, we will not go over preparing the inputs. Instead, we provide 
 5) Optionally, you can edit the default parameter values.
 ```
 By default:
-Sample Number: 10 (minimum 2)
-Reverse Rate: 0.1 (+ values)
-Anchor Number: 20 (SERES only)
-Anchor Length: 5 (SERES only)
+Sample Number: 10 (minimum 2. Represents total number of sampled sequences.)
+Reverse Rate: 0.1 (0 to 1 not including 0 or 1. Represents the reverse rate of the random walk.)
+Anchor Number: 20 (SERES only. Represents the number of anchors.)
+Anchor Length: 5 (SERES only. Represents the length of the anchors.)
 ```
 
 6) Select a file input for the FASTA alignment file. In our example datasets, choose `alignment.fasta`
