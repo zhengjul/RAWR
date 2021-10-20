@@ -52,9 +52,7 @@ Second, set up your server e-mail. Its purpose is to notify the user when and wh
 
 Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps 
 
-Step 2: Edit the app.py in the following app.config.update() section. Please choose from the two options below:
-        1) If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
-        2) If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465.
+Step 2: Edit the app.py in the following app.config.update() section. 
 ```
  app.config.update(
     MAIL_SERVER='smtp.gmail.com',
@@ -63,6 +61,9 @@ Step 2: Edit the app.py in the following app.config.update() section. Please cho
     MAIL_USERNAME='xxx@gmail.com',
     MAIL_PASSWORD='xxx'
 )
+When editing the MAIL_PORT, please choose from the two options below:
+1) If using STARTTLS with MAIL_USE_TLS = True, then use MAIL_PORT = 587.
+2) If using SSL/TLS directly with MAIL_USE_SSL = True, then use MAIL_PORT = 465.
 ```
 Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 
         1) If you have NOT enabled 2-step verification, enter your gmail login password
