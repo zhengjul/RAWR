@@ -1,4 +1,4 @@
-RAndom Walk Resampling (RAWR) is a non-parametric resampling method written in Python. We provide two resampling algorithms here, RAWR and SEquential
+RAWR is a non-parametric resampling method written in Python. We provide two resampling algorithms here, RAndom Walk Resampling (RAWR) and SEquential
 RESampling (SERES), for performing support estimation for multiple sequence alignments and phylogenetic trees. RAWR and SERES conceptually work by random walking along biological molecular sequences and retaining the sequence dependence during the resampling process. We present this tutorial for people who prefer to use a GUI application or a website interface. The algorithms are freely available under the GNU General Public License.
 
 * [Installation](#installation)
