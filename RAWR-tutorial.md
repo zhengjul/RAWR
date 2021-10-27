@@ -16,37 +16,39 @@ Installation
 
 ### Software Install
 
-RAWR has a GUI interface tested to work on Linux and Mac. Before running RAWR, please make sure you have set `python` to link to Python3. We have last checked on Python 3.8 that the following python dependencies' versions are compatible:
+RAWR has a GUI interface tested to work on Linux, Apple OSX, and Windows. Before running RAWR, please make sure you have set `python` to link to Python3. We have last checked on Python 3.8 that the following python dependencies are compatible:
 ```
- pip install ete3==3.1.2
- pip install PyQt5==5.11.3
- pip install 'numpy>=1.14.6'
- pip install 'scipy>=1.1.0'
- pip install sklearn
- pip install 'Bio>=1.1.5'
- pip install 'flask>=2.0.2'
- pip install 'pytz>=2021.3'
- pip install 'python-dateutil>=2.7.3'
+pip install ete3==3.1.2
+pip install PyQt5==5.11.3
+pip install "numpy>=1.14.6"
+pip install "scipy>=1.1.0"
+pip install sklearn
+pip install "Bio>=1.1.5"
+pip install "flask>=2.0.2"
+pip install pathlib
+pip install "pytz>=2021.3"
+pip install "python-dateutil>=2.7.3"
 ```
-To run RAWR GUI software, launch open a command `terminal` in the RAWR-software directory and type in `python main.py`. 
-Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML version 8.2.12. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their folders in `src`.
+To run RAWR GUI software, launch open your computer's command `terminal` in your RAWR-software directory and enter the command, `python main.py`. 
+Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML version 8.2.12. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their binaries in `src` (please make sure to double check that the binary filenames remain the same).
   - MAFFT: https://mafft.cbrc.jp/alignment/software/.
   - RAxML: https://github.com/stamatak/standard-RAxML.
 
 ### Website Install
 
-We provide the codebase to set up a RAWR web server to run on your local host. The users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
-First, please make sure you have set `python` to link to Python3 and make sure your python version is dependencies' versions are compatible:
+We provide the codebase to set up a RAWR web server to run on your local host. Users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
+First, please make sure your local host's operating system is one of the following: Linux, Apple OSX, and Windows. Also make sure you have set `python` to link to Python3 and make sure to install the following python dependencies:
 ```
- pip install ete3==3.1.2
- pip install PyQt5==5.11.3
- pip install 'numpy>=1.14.6'
- pip install 'scipy>=1.1.0'
- pip install sklearn
- pip install 'Bio>=1.1.5'
- pip install 'flask>=2.0.2'
- pip install 'pytz>=2021.3'
- pip install 'python-dateutil>=2.7.3'
+pip install ete3==3.1.2
+pip install PyQt5==5.11.3
+pip install "numpy>=1.14.6"
+pip install "scipy>=1.1.0"
+pip install sklearn
+pip install "Bio>=1.1.5"
+pip install "flask>=2.0.2"
+pip install pathlib
+pip install "pytz>=2021.3"
+pip install "python-dateutil>=2.7.3"
 ```
 Second, set up your server e-mail. Its purpose is to notify the user when and where the results can be found, in case they time out or exit from the homepage, they will still get the result safely delivered via email when it's ready. We have included below instructions to set up any Gmail account as a server sender. Setting up Flask to use an existing emailing service is the easiest way to use the asynchronous emailing option, but feel free to adapt the code to your needs.
 
