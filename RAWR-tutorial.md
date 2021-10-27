@@ -16,7 +16,7 @@ Installation
 
 ### Software Install
 
-RAWR has a GUI interface tested to work on Linux, Apple OSX, and Windows. Before running RAWR, please make sure you have Python3 and pip installed, and that by default, your command terminal has linked `python` to call Python3. We have last checked on Python 3.8 that the following python dependencies are compatible:
+RAWR has a GUI interface tested to work on Apple macOS Big Sur, Linux Ubuntu 20.04, and Windows 10. Before running RAWR, please make sure you have Python3 and pip installed, and that by default, your command terminal has linked `python` to call Python3. We have last checked on Python 3.8 that the following python dependencies are compatible:
 ```
 pip install ete3==3.1.2
 pip install PyQt5==5.11.3
@@ -37,7 +37,7 @@ Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxM
 ### Website Install
 
 We provide the codebase to set up a RAWR web server to run on your local host. Users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
-First, please make sure your local host's operating system is one of the following: Linux, Apple OSX, and Windows. Also make sure you have set `python` to link to Python3 and make sure to install the following python dependencies:
+First, please make sure your local host's operating system is one of the following: Linux, Apple OSX, or Windows 10. Also make sure you have set `python` to link to Python3 and make sure to install the following python dependencies:
 ```
 pip install ete3==3.1.2
 pip install PyQt5==5.11.3
