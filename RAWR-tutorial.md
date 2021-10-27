@@ -30,14 +30,17 @@ pip install "pytz>=2021.3"
 pip install "python-dateutil>=2.7.3"
 ```
 To run RAWR GUI software, launch open your computer's command `terminal` in your RAWR-software directory and enter the command, `python main.py`. 
-Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML version 8.2.12. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their binaries in `src` (please make sure to double check that the binary filenames remain the same).
+Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML versions 8.2.10 (for macOS and Windows) and version 8.2.12 for Linux. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their binaries in `src` (please make sure to double check that the binary filenames remain the same).
   - MAFFT: https://mafft.cbrc.jp/alignment/software/.
   - RAxML: https://github.com/stamatak/standard-RAxML.
 
 ### Website Install
 
 We provide the codebase to set up a RAWR web server to run on your local host. Users can directly use the web server for small dataset analysis. The limitation of the web server is 50Mb of the input alignment with no more than 50 taxa.
-First, please make sure your local host's operating system is one of the following: Linux, Apple OSX, or Windows 10. Also make sure you have set `python` to link to Python3 and make sure to install the following python dependencies:
+
+First, please make sure your local host's operating system is one of the following: Linux, Apple OSX, or Windows 10. If you are using Windows, please install Windows Subsystem for Linux and reboot prior to setting up the RAWR web service. If you are using macOS, please change your terminal shell to Bash.
+
+Please make sure you have set `python` to link to Python3 and make sure to install the following python dependencies:
 ```
 pip install ete3==3.1.2
 pip install PyQt5==5.11.3
