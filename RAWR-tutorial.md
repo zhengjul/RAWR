@@ -16,7 +16,7 @@ Installation
 
 ### Software Install
 
-RAWR has a GUI interface tested to work on Linux, Apple OSX, and Windows. Before running RAWR, please make sure you have set `python` to link to Python3. We have last checked on Python 3.8 that the following python dependencies are compatible:
+RAWR has a GUI interface tested to work on Linux, Apple OSX, and Windows. Before running RAWR, please make sure you have Python3 and pip installed, and that by default, your command terminal has linked `python` to call Python3. We have last checked on Python 3.8 that the following python dependencies are compatible:
 ```
 pip install ete3==3.1.2
 pip install PyQt5==5.11.3
@@ -54,7 +54,7 @@ Second, set up your server e-mail. Its purpose is to notify the user when and wh
 
 Step 1: Turn on "Less secure app access" for your specific gmail account here: https://myaccount.google.com/lesssecureapps 
 
-Step 2: Edit the app.py in the following app.config.update() section. 
+Step 2: Edit the file `app.py` in the following app.config.update() section. 
 ```
  app.config.update(
     MAIL_SERVER='smtp.gmail.com',
@@ -70,11 +70,11 @@ When editing the MAIL_PORT, please choose from the two options below:
 
 
 Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as one of the following 2 options: 
-1) If you have NOT enabled 2-step verification, enter your gmail login password
-2) If you have enabled 2-step verification, generate and use an app password
+1) If you have NOT enabled 2-step verification, enter your gmail login password for MAIL_PASSWORD
+2) If you have enabled 2-step verification, generate and use an app password for MAIL_PASSWORD
 
 
-To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose is `http://10.0.2.15:5000/`, and you can visit this locally hosted page with any browser. You can double check the link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
+To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose by default is `http://10.0.2.15:5000/`. Users can visit this locally hosted page with any browser. While launching the server, you can double check the website link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
 
 ---------------
 Input
