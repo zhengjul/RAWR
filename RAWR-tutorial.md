@@ -1,5 +1,5 @@
 RAWR is a non-parametric resampling method written in Python. We provide two resampling algorithms here, RAndom Walk Resampling (RAWR) and SEquential
-RESampling (SERES), for performing support estimation for multiple sequence alignments and phylogenetic trees. RAWR and SERES conceptually work by random walking along biological molecular sequences and retaining the sequence dependence during the resampling process. We present this tutorial for people who prefer to use a GUI application or a website interface. The algorithms are freely available under the GNU General Public License.
+RESampling (SERES), for performing support estimation for multiple sequence alignments and phylogenetic trees. RAWR and SERES conceptually work by random walking along biological molecular sequences and retaining the sequence dependence during the resampling process. We present this tutorial for people who prefer to use a GUI application or a website interface. Picture tutorials are available in the supplementary document of the associated publication. The algorithms implemented in RAWR are freely available under the GNU General Public License. 
 
 * [Installation](#installation)
   * [Software Install](#software-install)
@@ -9,6 +9,9 @@ RESampling (SERES), for performing support estimation for multiple sequence alig
   * [sample sequence output](#sample-sequence-output)
   * [MSA support estimation output](#msa-support-estimation-output)
   * [Tree support estimation output](#tree-support-estimation-output)
+* [Visualize Output](#visualize-output)
+  * [MSA support visualizer](#msa-support-visualizer)
+  * [Tree support visualizer](#tree-support-visualizer)
 * [Publications](#publications)
 
 Installation
@@ -134,6 +137,20 @@ The MSA support estimator will calculate the support value for input alignment a
 ### Tree support estimation output
 
 The tree support estimator will generate annotated tree in Newick format, which is saved to `tree.support.txt`. It will also generate a figure called `tree.support.png` to visualize the tree structure and support values. 
+
+---------------
+Visualize Output
+---------------
+
+### MSA support visualizer
+We provide a python script called `MSA_support_csv_2_jalview_sequence_annotation.py` that will take the output file `MSA.support.csv` and generate a JalView Sequence Features annotation file. This script is accessible by command line `python MSA_support_csv_2_jalview_sequence_annotation.py MSA.support.csv`. The support bar graph color can be changed with our custom script `python MSA_support_csv_2_jalview_sequence_annotation.py -color blue MSA.support.csv`. 
+
+We used JalView 2.11.1.4 in the following example.
+Click “File” > “Input Alignment” > “From File” to enter your original “alignment.fasta” input file. This will open an alignment viewer inside of JalView. Inside the alignment viewer, click “File” > “Load Features/ Annotations”. 
+ 
+### Tree support visualizer
+We provide an image of the Newick tree with confidence support (see Figure 3). You can also choose other phylogeny visualizers such as Interactive Tree Of Life (iTOL). 
+
 
 ---------------
 Publications
