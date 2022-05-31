@@ -21,7 +21,7 @@ Installation
 
 ### Software Install
 
-RAWR has a GUI interface tested to work on Apple macOS Big Sur, Linux Ubuntu 20.04, and Windows 10. Before running RAWR, please make sure to install and make default Python3. You may use Anaconda or Virtualenv to manage python packages. We have last checked on Python 3.8 that the following python dependencies are compatible.
+RAWR has a GUI interface tested to work on Apple macOS Big Sur, Linux Ubuntu 20.04, and Windows. Before running RAWR, please make sure to install and make default Python3. You may use Anaconda or Virtualenv to manage python packages. We have last checked on Python 3.8 that the following python dependencies are compatible.
 ```
 #Virtualenv commands
 pip install ete3==3.1.2
