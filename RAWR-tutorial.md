@@ -112,7 +112,7 @@ pyinstaller --hidden-import="sklearn.utils._cython_blas" --hidden-import="sklear
 ```
 Then, copy `mafft` and `raxml` folders from `rawrsampler` folder to the binary `build/rawrsampler` folder.
 
-Fourth, copy the provided `conda-recipe` folder and `rawrsampler.xml` file to the build folder. Open a command terminal in the build folder path and build the conda package locally.
+Fourth, copy the provided `conda-recipe` folder and `rawrsampler.xml` file to the `build` folder. Open a command terminal in the `build` folder path and build the conda package locally.
 ```
 #After activating your Anaconda environment that you installed Planemo into:
 conda build conda-recipe
