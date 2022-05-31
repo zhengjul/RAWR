@@ -106,7 +106,7 @@ First, follow instructions to install local Galaxy server. https://galaxyproject
 Second, follow instructions to install Planemo. https://anaconda.org/bioconda/planemo 
 
 Third, get your RAWR executable. If you are using Linux, the executable is available. https://gitlab.msu.edu/liulab/rawr-web-software .
-If you are using other operating systems, please download the rawr-for-galaxy folder from the above gitlab link and create an executable on your machine:
+If you are using other operating systems, please download the `rawr-for-galaxy` folder from the above gitlab link and create an executable on your machine:
 ```
 pyinstaller --hidden-import="sklearn.utils._cython_blas" --hidden-import="sklearn.neighbors.typedefs" rawrsampler.py
 ```
