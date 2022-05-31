@@ -4,6 +4,7 @@ RESampling (SERES), for performing support estimation for multiple sequence alig
 * [Installation](#installation)
   * [Software Install](#software-install)
   * [Website Install](#website-install)
+  * [Local Galaxy Install](#local-galaxy-install)
 * [Input](#input)
 * [Output](#output)
   * [sample sequence output](#sample-sequence-output)
@@ -12,6 +13,7 @@ RESampling (SERES), for performing support estimation for multiple sequence alig
 * [Visualize Output](#visualize-output)
   * [MSA support visualizer](#msa-support-visualizer)
   * [Tree support visualizer](#tree-support-visualizer)
+  * [Galaxy tree support visualizer](#galaxy-tree-support-visualizer)
 * [Publications](#publications)
 
 Installation
@@ -19,8 +21,9 @@ Installation
 
 ### Software Install
 
-RAWR has a GUI interface tested to work on Apple macOS Big Sur, Linux Ubuntu 20.04, and Windows 10. Before running RAWR, please make sure you have Python3 and pip installed, and that by default, your command terminal has linked `python` to call Python3. We have last checked on Python 3.8 that the following python dependencies are compatible:
+RAWR has a GUI interface tested to work on Apple macOS Big Sur, Linux Ubuntu 20.04, and Windows 10. Before running RAWR, please make sure to install and make default Python3. You may use Anaconda or Virtualenv to manage python packages. We have last checked on Python 3.8 that the following python dependencies are compatible.
 ```
+#Virtualenv commands
 pip install ete3==3.1.2
 pip install PyQt5==5.11.3
 pip install "numpy>=1.14.6"
@@ -31,6 +34,12 @@ pip install "flask>=2.0.2"
 pip install pathlib
 pip install "pytz>=2021.3"
 pip install "python-dateutil>=2.7.3"
+pip install pandas
+```
+If you prefer Anaconda package manager, use the command below to install dependencies.
+```
+#Anaconda commands
+conda install -c conda-forge -c etetoolkit ete3 pyqt numpy scipy scikit-learn biopython flask pathlib pytz python-dateutil pandas
 ```
 To run RAWR GUI software, launch open your computer's command `terminal` in your RAWR-software directory and enter the command, `python main.py`. 
 Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML versions 8.2.10 (for macOS and Windows) and version 8.2.12 for Linux. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their binaries in `src` (please make sure to double check that the binary filenames remain the same).
@@ -45,6 +54,7 @@ First, please make sure your local host's operating system is one of the followi
 
 Please make sure you have set `python` to link to Python3 and make sure to install the following python dependencies:
 ```
+#Virtualenv commands
 pip install ete3==3.1.2
 pip install PyQt5==5.11.3
 pip install "numpy>=1.14.6"
@@ -55,6 +65,12 @@ pip install "flask>=2.0.2"
 pip install pathlib
 pip install "pytz>=2021.3"
 pip install "python-dateutil>=2.7.3"
+pip install pandas
+```
+If you prefer Anaconda package manager, use the command below to install dependencies.
+```
+#Anaconda commands
+conda install -c conda-forge -c etetoolkit ete3 pyqt numpy scipy scikit-learn biopython flask pathlib pytz python-dateutil pandas
 ```
 Second, set up your server e-mail. Its purpose is to notify the user when and where the results can be found, in case they time out or exit from the homepage, they will still get the result safely delivered via email when it's ready. We have included below instructions to set up any Gmail account as a server sender. Setting up Flask to use an existing emailing service is the easiest way to use the asynchronous emailing option, but feel free to adapt the code to your needs.
 
@@ -82,6 +98,26 @@ Step 3: Enter your MAIL_USERNAME as your full gmail account and MAIL_PASSWORD as
 
 To run RAWR web server, open a command `terminal` in the RAWR-web directory and type in `python app.py`. The local host that Python's Flask package will probably choose by default is `http://10.0.2.15:5000/`. Users can visit this locally hosted page with any browser. While launching the server, you can double check the website link by looking for the terminal printed statement `* Running on http://10.0.2.15:5000/ (Press CTRL+C to quit)`.
 
+### Local Galaxy Install
+We recommend Anaconda for python package management, but you can choose Virtualenv.
+First, follow instructions to install local Galaxy server. https://galaxyproject.org/admin/get-galaxy/
+Second, follow instructions to install Planemo. https://anaconda.org/bioconda/planemo 
+Third, get your RAWR executable. If you are using Linux, the executable is available. https://gitlab.msu.edu/liulab/rawr-web-software .
+If you are using other operating systems, please download the rawr-for-galaxy folder from the above gitlab link and create an executable on your machine:
+```
+pyinstaller --hidden-import="sklearn.utils._cython_blas" --hidden-import="sklearn.neighbors.typedefs" rawrsampler.py
+```
+Then, copy `mafft` and `raxml` folders from `rawrsampler` folder to the binary `build/rawrsampler` folder.
+Fourth, copy the provided `conda-recipe` folder and `rawrsampler.xml` file to the build folder. Open a command terminal in the build folder path and build the conda package locally.
+```
+#After activating your Anaconda environment that you installed Planemo into:
+conda build conda-recipe
+```
+Finally, use Planemo to serve the rawrsampler tool on your local Galaxy instance. 
+```
+planemo serve --conda_use_local --galaxy_root ~/Work/galaxy
+```
+By default, Planemo will likely host the local Galaxy instance at `http://127.0.0.1:9090/`. Users can visit this locally hosted page with any browser.
 ---------------
 Input
 ---------------
@@ -149,8 +185,10 @@ We used JalView 2.11.1.4 in the following example.
 Click “File” > “Input Alignment” > “From File” to enter your original “alignment.fasta” input file. This will open an alignment viewer inside of JalView. Inside the alignment viewer, click “File” > “Load Features/ Annotations”. 
  
 ### Tree support visualizer
-We provide an image of the Newick tree with confidence support (see Figure 3). You can also choose other phylogeny visualizers such as Interactive Tree Of Life (iTOL). 
+We provide a visualization of the Newick tree with confidence support. You can also choose other phylogeny visualizers such as Interactive Tree Of Life (iTOL). 
 
+### Galaxy tree support visualizer
+Galaxy interface has visualization software PhyloViz that can be accessed via the visualization icon below the output phylogeny tree.
 
 ---------------
 Publications
