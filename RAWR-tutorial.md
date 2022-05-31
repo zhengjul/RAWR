@@ -41,7 +41,7 @@ If you prefer Anaconda package manager, use the command below to install depende
 #Anaconda commands
 conda install -c conda-forge -c etetoolkit ete3 pyqt numpy scipy scikit-learn biopython flask pathlib pytz python-dateutil pandas
 ```
-To run RAWR GUI software, launch open your computer's command `terminal` in your RAWR-software directory and enter the command, `python main.py`. 
+To run RAWR GUI software, launch open your computer's command terminal in your RAWR-software directory and enter the command, `python main.py`. 
 Our RAWR software comes with standalone versions of MAFFT version 7.487 and RAxML versions 8.2.10 (for macOS and Windows) and version 8.2.12 for Linux. If you want updated versions of these software, you can download the standalone versions from their respective websites and replace their binaries in `src` (please make sure to double check that the binary filenames remain the same).
   - MAFFT: https://mafft.cbrc.jp/alignment/software/.
   - RAxML: https://github.com/stamatak/standard-RAxML.
