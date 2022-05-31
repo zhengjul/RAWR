@@ -100,14 +100,18 @@ To run RAWR web server, open a command `terminal` in the RAWR-web directory and 
 
 ### Local Galaxy Install
 We recommend Anaconda for python package management, but you can choose Virtualenv.
+
 First, follow instructions to install local Galaxy server. https://galaxyproject.org/admin/get-galaxy/
+
 Second, follow instructions to install Planemo. https://anaconda.org/bioconda/planemo 
+
 Third, get your RAWR executable. If you are using Linux, the executable is available. https://gitlab.msu.edu/liulab/rawr-web-software .
 If you are using other operating systems, please download the rawr-for-galaxy folder from the above gitlab link and create an executable on your machine:
 ```
 pyinstaller --hidden-import="sklearn.utils._cython_blas" --hidden-import="sklearn.neighbors.typedefs" rawrsampler.py
 ```
 Then, copy `mafft` and `raxml` folders from `rawrsampler` folder to the binary `build/rawrsampler` folder.
+
 Fourth, copy the provided `conda-recipe` folder and `rawrsampler.xml` file to the build folder. Open a command terminal in the build folder path and build the conda package locally.
 ```
 #After activating your Anaconda environment that you installed Planemo into:
